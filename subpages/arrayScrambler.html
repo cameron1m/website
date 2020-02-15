@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html>
+    
+<style>
+    h1 {
+        text-align: center;
+    }
+    
+    p{
+        text-align: center;
+    }
+</style>
+
+    <h1>Word Scrambler</h1>
+<body>
+    <!--button for version 1-->
+    <p><button onclick="gracious()"> Version 1</button>
+    <br>
+    <br>
+    
+    <input id="wordIn" type="text" placeholder="Enter any Word">
+    <!--button for version 2-->
+    <p><button onclick="version2()"> Version 2</button>
+    <br>
+    <br>
+    <!--Scramble button-->
+    <p><button onclick="scramble()"> Scramble</button>
+    <script>
+        //version 1
+        function gracious(){
+        //declare a simple array
+        var arr = ["g", "r", "a", "c", "i", "o", "u", "s"];
+        //loop through for length and alert for every letter
+        for(var i=0; i < arr.length; i++){
+            alert(arr[i]);
+        }
+        }
+
+        //function for version 2
+        function version2(){
+            //retrieve input
+            var arr2 = [];
+            var input = document.getElementById("wordIn").value;
+            
+            //loop through input, put each letter in own index
+            for(var j = 0; j < input.length; j++){
+                arr2[j] = input.charAt(j);
+            }
+            //loop to output
+            for(var k=0; k < arr2.length; k++){
+            alert(arr2[k]);
+            }
+            
+        }
+
+        function scramble(){
+            //take input and put into an array
+            var arr3 = [];
+            var input1 = document.getElementById("wordIn").value;
+            //say original
+            alert(input1);
+            //fill the array with each input char
+            for(var l = 0; l < input1.length; l++){
+                arr3[l] = input1.charAt(l);
+            }
+
+            
+           
+            //add temp variable declare rand
+            //add iterator
+            var rand;
+            var temp;
+            var it = 0;
+            var output = "";
+            //array for scrambled word
+            var arr4 = [];
+            //declare array that checks what number were used
+            var used = [-1];
+            //scramble loop, scramble the array by moving values around
+            for(var m = 0; m < arr3.length; m++){
+                //create random number
+                rand = Math.ceil(Math.random() * arr3.length-1);
+               //while loop to make sure a number isnt repeated
+               while(true){
+                   //if same redo
+                   if(used.includes(rand)){
+                    rand = Math.ceil(Math.random() * arr3.length-1);
+                   }
+                   //otherwise break loop and continue
+                   else{
+                       break;
+                   }
+                
+               }
+               //add random char to new array
+                arr4[m] = arr3[rand];
+                //add the random index to array of used numbers
+                used[it] = rand;
+                //iterate 
+                it++;
+                
+            }
+            //print out the result
+            for(var n = 0; n < arr4.length; n++){
+            alert(arr4[n]);
+            //convert to string
+            output += arr4[n];
+            }
+            alert(output);
+            
+            
+        }
+    </script>
+
+</body>
+
+</html>

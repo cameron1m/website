@@ -1,0 +1,311 @@
+
+<!DOCTYPE html>
+<html>
+  
+<style>
+
+#container {
+  width: 700px;
+  height: 500px;
+  position: relative;
+  background: black;
+}
+
+#ball {
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	background-color:gray;
+	left: 350px;
+	top: 250px;
+	
+}
+#player1 {
+  width: 25px;
+  height: 200px;
+  position: absolute;
+  background-color: white;
+  left: 25px;
+  top: 150px;
+}
+
+#player2 {
+  width: 25px;
+  height: 200px;
+  position: absolute;
+  background-color: white;
+  right: 25px;
+  top: 150px;
+}
+
+
+</style>
+<body>
+
+
+<p><button onClick = "play()">Click To Play</button>
+  
+
+
+<div id = "container" >
+  <div id = "ball" ></div>
+  <div id = "player1" ></div>
+  <div id = "player2" ></div>
+</div>
+
+
+<script>
+
+function play(){
+
+  var elem1 = document.getElementById("player1");
+  var elem2 = document.getElementById("player2");
+  var pos = [350, 250];
+  //primes player 1 controls and draws input
+  var yPos1 = player1Move(150);
+    elem1.style.top = yPos1 + "px";
+  //primes player 2 controls and draws input
+  var yPos2 = player2Move(150);
+    elem2.style.top = yPos2 + "px";
+    pos = ballMove(yPos1, yPos2, pos);
+  //runs input interval loop
+  var id = setInterval(input, 5);  
+
+  //calls player controls and draws input
+  function input(){
+
+    yPos1 = player1Move(yPos1);
+    
+    yPos2 = player2Move(yPos2);
+
+    pos = ballMove(yPos1, yPos2, pos);
+    elem1.style.top = yPos1 + "px";
+    elem2.style.top = yPos2 + "px";
+    
+  }
+  
+}
+//animates ball and checks for collision with walls or paddles, also changes score
+function ballMove(yPos1, yPos2, pos) {
+  // console.log(yPos1 +"yeet" + yPos2)
+  // TODO: CHANGE PADDLE INPUT FROM IF/ELSE TO SWTITCH CASE
+  // TODO: COLLISION WITH PADDLES
+  // TODO: BALL RANDOMLY GLITCHES WHEN HITTING TOP OF CONTAINER
+  // TODO: IF A PLAYER SCORES WHILE PADDLE OR PADDLES ARE BEING MOVED, THEY CONTINUE TO MOVE ON OWN AFTER RESET
+  // TODO: BALL COLLISION WITH PADDLES
+  // MAYBEDO: ADD ERROR CATCH IF BALL EXITS CONTAINER
+  
+
+          //STUFF TO MAKE COOL
+          // TODO: WORK ON UI, ADD LEGIT SCORE BOARD
+          // TODO: VOLLEY COUNT
+
+  var elem = document.getElementById("ball");  
+
+  var xDir = 3
+  var yDir = 1;
+  var yPos1a = yPos1;
+  var yPos1b = yPos2;
+  var xPos = pos[0];
+  var yPos = pos[1];
+  var playerScore1 = 0;
+  var playerScore2 = 0;
+  var id = setInterval(frame, 1);
+
+//animatiion and collision detection function
+  function frame() {
+
+    if(25 < xPos + xPos + 20 && 25 + 25 > xPos && yPos1a < yPos + 20 && yPos1a + 200 > yPos){
+      xDir += Math.floor(Math.random()*3)+1;
+      yDir += Math.floor(Math.random()*3)+1;
+      //picks bounce direction
+      var chosenValueY = Math.random() < 0.5 ? -1 : 1;
+
+      xDir *= -1;
+      yDir *= chosenValueY;
+      xPos += xDir;
+      yPos += yDir;
+      elem.style.top = yPos + "px"; 
+      elem.style.left = xPos + "px"; 
+      return pos = [xPos, yPos];
+      }
+
+    else if(xPos >= 680 || yPos >= 480 || xPos <= 0 || yPos <= 0) {
+
+      if(xPos <= 0 || xPos >= 680){
+        //alerts players if score changes and what current score is and resets position
+        //goes in random direction
+        //gives scored on player the ball first
+        if(xPos <=0) {
+          playerScore2 += 1;
+
+          xDir = Math.floor(Math.random()*6)+2;
+          yDir = Math.floor(Math.random()*6)+2;
+
+          xPos = 350;
+          yPos = 250;
+          window.alert("PLAYER 2 SCORES!!!!!\n" + playerScore2 + ":" + playerScore1);
+          return pos = [xPos, yPos];
+        }
+        
+        if(xPos >=680){
+          playerScore1 += 1;
+          
+          xDir = Math.floor(Math.random()*6)+2;
+          yDir = Math.floor(Math.random()*6)+2;
+          xDir *= -1;
+          yDir *= -1;
+          xPos = 350;
+          yPos = 250;
+         window.alert("PLAYER 1 SCORES!!!!!\n" + playerScore1 + ":" + playerScore2);
+         return pos = [xPos, yPos];
+        }
+    
+
+      elem.style.top = yPos + "px"; 
+      elem.style.left = xPos + "px"; 
+      return pos = [xPos, yPos];
+      }
+
+
+      else if (yPos <=0 || yPos >= 480){
+        //chooses a random number for rate of change
+      xDir += Math.floor(Math.random()*3)+1;
+      yDir += Math.floor(Math.random()*3)+1;
+      //picks bounce direction
+      var chosenValueX = Math.random() < 0.5 ? -1 : 1;
+      
+      xDir *= chosenValueX;
+      yDir *= -1;
+      xPos += xDir;
+      yPos += yDir;
+      elem.style.top = yPos + "px"; 
+      elem.style.left = xPos + "px"; 
+      return pos = [xPos, yPos];
+      } 
+      
+    }
+    else {
+      xPos += xDir;
+      yPos += yDir; 
+      elem.style.top = yPos + "px"; 
+      elem.style.left = xPos + "px"; 
+      return pos = [xPos, yPos];
+    }
+  }
+}
+//player 1 movement and control
+function player1Move(yPos1){
+  
+  var elem1 = document.getElementById("player1");
+  var id = setInterval(frame, 5);
+
+  function frame() {
+    if (yPos1 >= 300 || yPos1 <= 0) {
+      if (yPos1 <= 0) return yPos1+=10;
+      return yPos1-=10;
+    } 
+    else if (up1Pressed){
+      elem1.style.top = yPos1 + "px"; 
+      return yPos1-=3; 
+      
+      
+    }
+    else if (down1Pressed){
+      elem1.style.top = yPos1 + "px"; 
+      return yPos1+=3;  
+      
+    }
+    else{
+      elem1.style.top = yPos1 + "px"; 
+      return yPos1; 
+    }
+  }
+  
+}
+//player 2 movement and control
+function player2Move(yPos2){
+  var elem2 = document.getElementById("player2");
+  
+  var id = setInterval(frame, 1);
+
+  function frame() {
+    if (yPos2 >= 300 || yPos2 <= 0) {
+      if (yPos2 <= 0) return yPos2+=10;
+      return yPos2-=10; 
+    }
+      else if (up2Pressed){
+      elem2.style.top = yPos2 + "px"; 
+     return yPos2-=3; 
+     
+      
+    }
+    else if (down2Pressed){
+      elem2.style.top = yPos2 + "px"; 
+     return yPos2+=3; 
+     
+      
+    }
+    else {
+      elem2.style.top = yPos2 + "px"; 
+      return yPos2;
+     
+      
+    }
+  }
+  
+}
+//control and event listener variables
+var up1Pressed = false;
+var down1Pressed = false;
+var up2Pressed = false;
+var down2Pressed = false;
+
+document.addEventListener('keydown', keyDownHandler, false);
+document.addEventListener('keyup', keyUpHandler, false);
+//checks if key is down
+function keyDownHandler(event) {
+
+    if(event.keyCode == 83) {
+    	down1Pressed = true;
+     // console.log("s is down");
+    }
+    else if(event.keyCode == 87) {
+      up1Pressed = true;
+      //console.log("w is down");
+    }
+
+    if(event.keyCode == 40) {
+      down2Pressed = true;
+      //console.log("down arrow is down");
+    }
+    else if(event.keyCode == 38) {
+      up2Pressed = true;
+      //console.log("up arrow is down");
+    }
+}
+// checks if key is up
+  function keyUpHandler(event) {
+
+    if(event.keyCode == 83) {
+    	down1Pressed = false;
+     // console.log("s is up");
+    }
+    else if(event.keyCode == 87) {
+      up1Pressed = false;
+      //console.log("w is up");
+    }
+
+    if(event.keyCode == 40) {
+      down2Pressed = false;
+      //console.log("down arrow is up");
+    }
+    else if(event.keyCode == 38) {
+      up2Pressed = false;
+      //console.log("up arrow is up");
+    }
+}
+</script>
+
+</body>
+</html>
