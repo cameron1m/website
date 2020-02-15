@@ -8,18 +8,24 @@
 <script>
     function parse(){
         var input = document.getElementById("input").value;
+        var streetName;
         var directional = ["N", "S", "E", "W", "NW", "NE", "SW", "SE"];
         var streetType = ["Road", "Rd", "Rd.", "Court", "Ct", "Ct.", "Boulevard", "Blvd", "Blvd.", "Avenue", "Ave", "Ave."];
+        
         var streetNumber = input.substring(0,input.indexOf(" "));
         input = input.substring(input.indexOf(" ")+1);
-
+        //check for directional prefix
         if(directional.includes(input.substring(0,1))){
             var streetDirPre = input.substring(0,2);
             input = input.substring(3);
+            if(directional. includes){}
+            
         }
+        //no directional prefix
         else
         {
-            var streetName = input.substring(0, input.indexOf(" "));
+            streetName = input.substring(0, input.indexOf(" "));
+            input = input.substring(0, input.indexOf(" "))
             
         }
     }
