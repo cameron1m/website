@@ -20,36 +20,35 @@
         else if (input.includes(streetTypeLib) == true){
             alert("Make sure you have an address with a Street Type");
         }
-        //comtinue with program
+        //continue with program
         else{
         var streetNumber = input.substring(0,input.indexOf(" "));
         input = input.substring(input.indexOf(" ")+1);
         //check for directional prefix
         if(directional.includes(input.substring(0,1))){
-            var streetDirPre = input.substring(0,2);
-            input = input.substring(3);
-            streetType = input.indexOf(streetTypeLib);
+            var streetDirPre = input.substring(0, input.indexOf(" "));
+            input = input.substring(input.indexOf(" ")+1);
             //apt
-            if(input.includes("apt")){
-                streetName = input.substring(0, (input.indexOf(("apt"))-1));
-                aptNum = input.substring(input.indexOf("apt")+4);
+            // if(input.includes("apt")){
+            //     streetName = input.substring(0, (input.indexOf(("apt"))-1));
+            //     aptNum = input.substring(input.indexOf("apt")+4);
                 
-            }
-            //check for Apt
-            if(input.includes("Apt")){
-                streetName = input.substring(0, (input.indexOf(("Apt"))-1));
-                aptNum = input.substring(input.indexOf("Apt")+4);
-            }
-            //check for apt.
-            if(input.includes("apt.")){
-                streetName = input.substring(0, (input.indexOf(("apt."))-1));
-                aptNum = input.substring(input.indexOf("apt.")+5);
-            }
-            //check for Apt.
-            if(input.includes("Apt.")){
-                streetName = input.substring(0, (input.indexOf(("Apt."))-1));
-                aptNum = input.substring(input.indexOf("Apt.")+5);
-            }            
+            // }
+            // //check for Apt
+            // if(input.includes("Apt")){
+            //     streetName = input.substring(0, (input.indexOf(("Apt"))-1));
+            //     aptNum = input.substring(input.indexOf("Apt")+4);
+            // }
+            // //check for apt.
+            // if(input.includes("apt.")){
+            //     streetName = input.substring(0, (input.indexOf(("apt."))-1));
+            //     aptNum = input.substring(input.indexOf("apt.")+5);
+            // }
+            // //check for Apt.
+            // if(input.includes("Apt.")){
+            //     streetName = input.substring(0, (input.indexOf(("Apt."))-1));
+            //     aptNum = input.substring(input.indexOf("Apt.")+5);
+            // }            
         }
         //no directional prefix
         else
