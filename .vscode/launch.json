@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "file:///D:/School/Computer%20Science%20Principles/website/subpages/addressParser.html",
+            "url": "file:///D:/School/Computer%20Science%20Principles/website/index.html",
             "webRoot": "${workspaceFolder}"
         }
     ]
