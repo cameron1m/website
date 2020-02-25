@@ -2,6 +2,7 @@
 
 <html>
     <h1>Please enter an address</h1>
+    <h2>Enter all Directionals as all caps and Apartment as "Apt"</h2>
     <br>
     <input id = "input" type = "text" placeholder="Enter Address"></input>
     <button onclick="parse()">Submit</button>
@@ -27,7 +28,7 @@
         input = input.substring(input.indexOf(" ")+1);
         //check for directional prefix
         //SLOPPY FIX FOR ERROR THAT I CANT FIGURE OUT AT THIS TIME
-        // streetName = input;
+       
         if(directional.includes(input.substring(0,1))){
             //get prefix directional
             var streetDirPre = input.substring(0, input.indexOf(" "));
@@ -76,6 +77,7 @@
             
         }
      }
+     streetName = input;
      //check for directional suffix
      if (directional.includes(streetName.substring(streetName.lastIndexOf(" ")+1))){
         streetDirSuf = streetName.substring(streetName.lastIndexOf(" ")+1);
