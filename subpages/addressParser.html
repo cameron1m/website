@@ -26,6 +26,8 @@
         var streetNumber = input.substring(0,input.indexOf(" "));
         input = input.substring(input.indexOf(" ")+1);
         //check for directional prefix
+        //SLOPPY FIX FOR ERROR THAT I CANT FIGURE OUT AT THIS TIME
+        // streetName = input;
         if(directional.includes(input.substring(0,1))){
             //get prefix directional
             var streetDirPre = input.substring(0, input.indexOf(" "));
@@ -45,7 +47,7 @@
                 //first version of street name INCLUDES TYPE
                 streetName = input.substring(0, (input.indexOf(("Apt"))-1));
                 aptNum = input.substring(input.indexOf("Apt")+4);
-
+            }
 
 
             // }
@@ -60,21 +62,17 @@
             //     aptNum = input.substring(input.indexOf("Apt.")+5);
             // }     
 
-            //check for directional suffix
-            }
-            else if (directional.includes(input.substring(indexOf(" ", "Apt")))) {
-                streetDirSuf = input.substring(indexOf(" ", "Apt"));
-        }
+        
+    }
 
 
-
-        }
+        
         //no directional prefix
         else
         {
             //first version of street name INCLUDES TYPE
-            streetName = input.substring(0, input.indexOf(" "));
-            input = input.substring(0, input.indexOf(" "))
+            streetName = input;
+            
             
         }
      }
@@ -91,7 +89,7 @@
      
      
      //FINAL OUTPUT
-     alert("Street Number:" + streetNumber + "\nStreet Prefix Directional:" + streetDirPre + "\nStreet Name:" + streetName + "\nStreet Type:" + streetType + "\nStreet Suffix Directional:" + streetDirSuf + "\nApartment Number: " + aptNum);
+     alert("Street Number: " + streetNumber + "\nStreet Prefix Directional: " + streetDirPre + "\nStreet Name: " + streetName + "\nStreet Type: " + streetType + "\nStreet Suffix Directional: " + streetDirSuf + "\nApartment Number: " + aptNum);
     
     }
 
