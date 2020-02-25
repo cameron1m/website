@@ -78,6 +78,22 @@
             
         }
      }
+     //check for directional suffix
+     if (directional.includes(streetName.substring(streetName.lastIndexOf(" ")+1))){
+        streetDirSuf = streetName.substring(streetName.lastIndexOf(" ")+1);
+        //get rid of suffix
+        streetName = streetName.substring(0, streetName.lastIndexOf(" "));
+     }
+     //grab street type and set STREET NAME FINAL
+     streetType = streetName.substring(streetName.lastIndexOf(" ")+1);
+     //get rid of type
+     streetName = streetName.substring(0, streetName.lastIndexOf(" "));
+     
+     
+     //FINAL OUTPUT
+     alert("Street Number:" + streetNumber + "\nStreet Prefix Directional:" + streetDirPre + "\nStreet Name:" + streetName + "\nStreet Type:" + streetType + "\nStreet Suffix Directional:" + streetDirSuf + "\nApartment Number: " + aptNum);
+    
     }
+
 </script>
 </html>
