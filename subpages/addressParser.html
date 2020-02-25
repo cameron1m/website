@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 
 <html>
-    <h1>Please enter an address</h1>
-    <h2>Enter all Directionals as all caps and Apartment as "Apt"</h2>
-    <br>
-    <input id = "input" type = "text" placeholder="Enter Address"></input>
-    <button onclick="parse()">Submit</button>
+    <style>
+        body{
+            position: absolute;
+            font-family: cursive;
+            text-align: center;
+            left: 250px;
+            background: url(../images/backdrop.jpg);
+        }
+    </style>
+
+    <body>
+        <h1>Please enter an address</h1>
+        <h2>Enter all Directionals as all caps and Apartment as "Apt"</h2>
+        <br>
+        <input id = "input" type = "text" placeholder="Enter Address"></input>
+        <button onclick="parse()">Submit</button>
+    </body>
+
 <script>
     function parse(){
         var input = document.getElementById("input").value;
@@ -19,6 +32,7 @@
         if(input.includes(directional) == true){
             alert("Make sure you have an address with a directional identifier");
         }
+
         else if (input.includes(streetTypeLib) == true){
             alert("Make sure you have an address with a Street Type");
         }
