@@ -8,8 +8,8 @@
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            //"url": "file:///D:/School/Computer%20Science%20Principles/website/subpages/addressParser.html",
-             "url": "file:///C:/Users/cammy/Documents/school/AP%20comp%20sci/2nd%20semster/website/subpages/addressParser.html",
+            "url": "file:///D:/School/Computer%20Science%20Principles/website/subpages/addressParser.html",
+            // "url": "file:///C:/Users/cammy/Documents/school/AP%20comp%20sci/2nd%20semster/website/subpages/addressParser.html",
             "webRoot": "${workspaceFolder}"
         }
     ]
