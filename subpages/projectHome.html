@@ -72,7 +72,27 @@
    .dropdown-contentProj a:hover {
     background-color: rgba(156, 156, 156, 0.815);
    }
+   #comboBox{
+       position: absolute;
+       top:200px;
+       left:480px;
+       
+   }
+   select{
+    background-image: url(../images/sovietElmo.gif);
+    background-position: center;
+    font-family: cursive;
+    height:35px;
+    }
     </style>
+    <script>
+    
+    function MM_jumpMenu(targ,selObj,restore){ //v3.0
+        eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+        //parent.location="x";
+        if (restore) selObj.selectedIndex=0;
+    }
+    </script>
     <body>
             <h1>Projects</h1>
             <h2>Look below for a list of all my projects</h2>
@@ -80,14 +100,23 @@
         <div id = "links">
             <div class = "dropdownProj">
                 <button class = "dropbtnProj">Projects</button>
-                   <div class = "dropdown-contentProj"> 
+                   <!-- <div class = "dropdown-contentProj"> 
                       <a href = "leapYear.html">Leap Year Checker</a>
                       <a href = "arrayScrambler.html">Array Scrambler</a>
                       <a href = "addressParser.html">Address Parser</a>
-                   </div>
+                   </div> -->
               </div>
             </div>
-            
+        <div id="comboBox">
+            <form name="form" id="form">
+                <select name="jumpMenu" id="jumpMenu" onChange="MM_jumpMenu('parent',this,0)">
+                    <option value="projectHome.html">Select a page below:</option>
+                    <option value="addressParser.html">Address Parser</option>
+                    <option value="arrayScrambler.html">Array Scrambler</option>
+                    <option value="leapYear.html">Leap Year Checker</option>
+                    </select>
+              </form>	
+            </div>
         </div>
     </body>
 </html>
