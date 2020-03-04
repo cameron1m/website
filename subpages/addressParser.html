@@ -24,13 +24,15 @@
         //grab input from html
         var input = document.getElementById("input").value;
         //different variables needed
-        var streetName;
-        var aptNum;
+        var streetName = "";
+        var aptNum = "";
         //arrays for type of directionals and street types
         var directional = ["N", "S", "E", "W", "NW", "NE", "SW", "SE", "FI", "KPN", "KPS"];
-        var streetTypeLib = ["Road", "Rd", "Rd.", "Court", "Ct", "Ct.", "Boulevard", "Blvd", "Blvd.", "Avenue", "Ave", "Ave.", "St.", "Street"];
-        var streetType;
-        var streetDirSuf;
+        var streetTypeLib = ["Road", "Rd", "Rd.", "Court", "Ct", "Ct.", "Boulevard", "Blvd", "Blvd.", "Avenue", "Ave", "Ave.", "St.", "Street", "St"];
+        var streetType = "";
+        var streetDirSuf = "";
+        var streetDirPre = "";
+        var streetNumber = "";
         //ERROR CHECKING
         //error check to make sure that the user includes a directional
         var presentDir = false;
@@ -62,14 +64,14 @@
     if(presentDir == true && presentType == true){
         //continue with program
       
-        var streetNumber = input.substring(0,input.indexOf(" "));
+        streetNumber = input.substring(0,input.indexOf(" "));
         input = input.substring(input.indexOf(" ")+1);
         //check for directional prefix
     
        
         if(directional.includes(input.substring(0,1))){
             //get prefix directional
-            var streetDirPre = input.substring(0, input.indexOf(" "));
+            streetDirPre = input.substring(0, input.indexOf(" "));
             input = input.substring(input.indexOf(" ")+1);
 
 
@@ -122,7 +124,10 @@
      
      //FINAL OUTPUT
      alert("PARSING SUCCESSFUL\nStreet Number: " + streetNumber + "\nStreet Prefix Directional: " + streetDirPre + "\nStreet Name: " + streetName + "\nStreet Type: " + streetType + "\nStreet Suffix Directional: " + streetDirSuf + "\nApartment Number: " + aptNum);
-    
+     if(aptNum>0){
+        alert("" + streetNumber + " " + streetDirPre + " " + streetName + " " + streetType + " " + streetDirSuf + " Apt " + aptNum);
+     }
+     alert("" + streetNumber + " " + streetDirPre + " " + streetName + " " + streetType + " " + streetDirSuf);
     }
     else {
         alert("Make sure you include a directional in all caps and also include a steet type that starts with a capital");
