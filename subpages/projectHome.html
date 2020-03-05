@@ -2,7 +2,7 @@
 
 
 <html>
- 
+
     <head>
         <title>Projects Home</title>
      </head>
@@ -13,14 +13,11 @@
         }
         h1{
             position: absolute;
-            left: 500px;
             text-align: center;
             font-family: cursive;
         }
         h2{
             position: absolute;
-            left: 350px;
-            top: 50px;
             font-family: cursive;
             text-align: center;
             
@@ -30,7 +27,43 @@
             font-family: cursive;
             text-align: center;
         }
-        
+
+        a:link {
+        color:black;
+        background-color: transparent;
+        text-decoration: none;
+        transition: color 0.2s;
+         }
+
+            a:visited {
+            color:black;
+            background-color: transparent;
+            text-decoration: none;
+            }
+
+            a:hover {
+            color: white;
+            background-color: transparent;
+            text-decoration: underline;
+            }
+
+            a:active {
+            color: rgb(0, 0, 0);
+            background-color: transparent;
+            text-decoration: underline;
+            }
+        #title{
+        position: absolute;
+        left:400px;
+        font-family: cursive;
+        }
+     #banner{
+      position: absolute;
+      background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(129,129,129,1) 27%, rgba(202,202,202,1) 30%, rgba(0,0,0,1) 100%);
+      
+      height: 100px;
+        }
+   
         #arrayScrambler{
             position: absolute;
             text-align: center;
@@ -42,7 +75,7 @@
             width: 150px;
             height: 100px;
             left: 100px;
-            top: 200px;
+            top: 250px;
             transition: color 0.3s;
             transition: opacity 0.2s;
 
@@ -63,13 +96,37 @@
             opacity: 80%;
             width: 150px;
             height: 100px;
-            left: 350px;
-            top: 200px;
+            left: 450px;
+            top: 250px;
+            scale: 100%;
+            transition: color 0.3s;
+            transition: opacity 0.2s;
+            
+
+        }
+        #leapYear:hover{
+            color: white;
+            opacity: 100%;
+            text-decoration: none;
+            
+        }
+        #addressParser{
+            position: absolute;
+            text-align: center;
+            color:black;
+            text-decoration: none;
+    
+            background-color: rgb(107, 107, 107);
+            opacity: 80%;
+            width: 150px;
+            height: 100px;
+            left: 800px;
+            top: 250px;
             transition: color 0.3s;
             transition: opacity 0.2s;
 
         }
-        #leapYear:hover{
+        #addressParser:hover{
             color: white;
             opacity: 100%;
             text-decoration: none;
@@ -78,9 +135,21 @@
         #links{
             position: absolute;
             left:-400px;
-            top: 150px;
+            top: 100px;
         }
-        .dropbtnProj {
+    #home{
+      font-family: cursive;
+      position: absolute;
+      left:20px;
+      top: 160px;
+   }
+    #games{
+      font-family: cursive;
+      position: absolute;
+      left:970px;
+      top: 160px;
+   }
+    .dropbtnProj {
       position: absolute;
       background-color: transparent;
       color: black;
@@ -123,7 +192,7 @@
    }
    #comboBox{
        position: absolute;
-       top:200px;
+       top:250px;
        left:480px;
        
    }
@@ -148,19 +217,43 @@
     }
     </script>
     <body>
-            <h1>Projects</h1>
-            <h2>Look below for a list of all my projects</h2>
-    
-        <div id = "links">
-            <div class = "dropdownProj">
-                <button class = "dropbtnProj">Projects</button>
-                   <!-- <div class = "dropdown-contentProj"> 
-                      <a href = "leapYear.html">Leap Year Checker</a>
-                      <a href = "arrayScrambler.html">Array Scrambler</a>
-                      <a href = "addressParser.html">Address Parser</a>
-                   </div> -->
-              </div>
+        <div id = "title"> 
+            <h1>Projects Home</h1>
+            <br>
+            <br>
+            <h2>Take a peek at my projects!</h2>
+          </div>
+          <div id = "banner">
+             <br>
+             <a href=../index.html"><h2 id="home">Home</h2></a>
+             <a href = "gameHome.html"><h2 id="games" >Games</h2></a>
+            <!-- <div class = "dropdownProj">
+               <button class = "dropbtnProj">Projects</button>
+                  <div class = "dropdown-contentProj">
+                     <a href = "subpages/projectHome.html">All Projects</a> 
+                     <a href = "subpages/leapYear.html">Leap Year Checker</a>
+                     <a href = "subpages/arrayScrambler.html">Array Scrambler</a>
+                     <a href = "subpages/addressParser.html">Address Parser</a>
+                  </div>
+             </div> -->
+             
+             <!-- <div class = "dropdownGames">
+               <button class = "dropbtnGames">Games</button>
+                  <div class = "dropdown-contentGames">
+                     <a href = "subpages/pong.html">Pong</a>
+               </div> -->
             </div>
+            </div>
+            <div id = "menuImages">
+               <!-- <img id = "projectPic" src = "images/projectPic.jpg"> -->
+               <!-- <img id = "gamePic" src = "images/sovietElmo.gif"> -->
+            </div>
+      
+        <!--  <p><a href = "subpages/leapYear.html">Leap Year Checker</a></p>
+         <p><a href = "subpages/pong.html">Pong Game</a></h1>
+         <p><a href = "subpages/arrayScrambler.html">Array Scrambler</a></p>
+         <p><a href = "subpages/addressParser.html">Adress Parser</a></p>
+          <img src = images/734.jpg width="400" height="500"> -->
         <div id="comboBox">
             <form name="form" id="form">
                 <select name="jumpMenu" id="jumpMenu" onChange="MM_jumpMenu('parent',this,0)">
@@ -174,7 +267,8 @@
         </div>
         <div id = "backdrop">
             <a  id = "arrayScrambler" href="arrayScrambler.html"><h3>Array Scrambler</h3></a>
-            <a  id = "leapYear" href="leapYear.html"><h3>LeapYear</h3></a>
+            <a  id = "leapYear" href="leapYear.html"><h3>Leap Year Checker</h3></a>
+            <a  id = "addressParser" href="addressParser.html"><h3>Address Parser</h3></a>
         </div>
     </body>
 </html>
