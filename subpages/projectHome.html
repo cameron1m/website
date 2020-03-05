@@ -25,6 +25,55 @@
             text-align: center;
             
         }
+
+        h3{
+            font-family: cursive;
+            text-align: center;
+        }
+        
+        #arrayScrambler{
+            position: absolute;
+            text-align: center;
+            color:black;
+            text-decoration: none;
+            
+            background-color: rgb(107, 107, 107);
+            opacity: 80%;
+            width: 150px;
+            height: 100px;
+            left: 100px;
+            top: 200px;
+            transition: color 0.3s;
+            transition: opacity 0.2s;
+
+        }
+        #arrayScrambler:hover{
+            color: white;
+            opacity: 100%;
+            text-decoration: none;
+        }
+        
+        #leapYear{
+            position: absolute;
+            text-align: center;
+            color:black;
+            text-decoration: none;
+            
+            background-color: rgb(107, 107, 107);
+            opacity: 80%;
+            width: 150px;
+            height: 100px;
+            left: 350px;
+            top: 200px;
+            transition: color 0.3s;
+            transition: opacity 0.2s;
+
+        }
+        #leapYear:hover{
+            color: white;
+            opacity: 100%;
+            text-decoration: none;
+        }
         
         #links{
             position: absolute;
@@ -79,10 +128,15 @@
        
    }
    select{
-    background-image: url(../images/sovietElmo.gif);
     background-position: center;
     font-family: cursive;
     height:35px;
+    }
+    #backdrop{
+        position: absolute;
+        top:150px;
+        background: gray;
+
     }
     </style>
     <script>
@@ -117,6 +171,10 @@
                     </select>
               </form>	
             </div>
+        </div>
+        <div id = "backdrop">
+            <a  id = "arrayScrambler" href="arrayScrambler.html"><h3>Array Scrambler</h3></a>
+            <a  id = "leapYear" href="leapYear.html"><h3>LeapYear</h3></a>
         </div>
     </body>
 </html>
