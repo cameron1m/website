@@ -14,6 +14,30 @@
        text-align: center;
        font-family: cursive;
     }
+    a:link {
+  color:black;
+  background-color: transparent;
+  text-decoration: none;
+  transition: color 0.2s;
+   }
+
+   a:visited {
+  color:black;
+  background-color: transparent;
+  text-decoration: none;
+   }
+
+   a:hover {
+  color: white;
+  background-color: transparent;
+  text-decoration: underline;
+   }
+
+   a:active {
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+  text-decoration: underline;
+   }
     #banner{
       position: static;
       background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(129,129,129,1) 27%, rgba(202,202,202,1) 30%, rgba(0,0,0,1) 100%);
@@ -125,7 +149,7 @@
    #project{
       font-family: cursive;
       position: absolute;
-      left:930px;
+      left:970px;
       top: 160px;
    }
 
@@ -138,7 +162,7 @@
     </div>
     <div id = "banner">
        <br>
-       <h2 id="games" href = "">Games</h2>
+       <a href=subpages/gameHome.html"><h2 id="games">Games</h2></a>
        <a href = "subpages/projectHome.html"><h2 id="project" >Projects</h2></a>
       <!-- <div class = "dropdownProj">
          <button class = "dropbtnProj">Projects</button>
