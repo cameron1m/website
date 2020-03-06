@@ -12,12 +12,12 @@
             background-repeat: repeat-y;
         }
         h1{
-            position: absolute;
+            
             text-align: center;
             font-family: cursive;
         }
         h2{
-            position: absolute;
+            
             font-family: cursive;
             text-align: center;
             
@@ -54,14 +54,16 @@
             }
         #title{
         position: absolute;
+        width:unset;
         left:400px;
         font-family: cursive;
+        
         }
-     #banner{
-      position: absolute;
-      background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(129,129,129,1) 27%, rgba(202,202,202,1) 30%, rgba(0,0,0,1) 100%);
-      
-      height: 100px;
+        #banner{
+        top: 133px;
+        position:relative;
+        background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(129,129,129,1) 27%, rgba(202,202,202,1) 30%, rgba(0,0,0,1) 100%);
+        height: 100px;
         }
    
         #arrayScrambler{
@@ -132,24 +134,20 @@
             text-decoration: none;
         }
         
-        #links{
-            position: absolute;
-            left:-400px;
-            top: 100px;
-        }
+
     #home{
       font-family: cursive;
       position: absolute;
       left:20px;
-      top: 160px;
+      top: 20px;
    }
     #games{
       font-family: cursive;
       position: absolute;
       left:970px;
-      top: 160px;
+      top: 20px;
    }
-    .dropbtnProj {
+    /* .dropbtnProj {
       position: absolute;
       background-color: transparent;
       color: black;
@@ -189,10 +187,10 @@
    }
    .dropdown-contentProj a:hover {
     background-color: rgba(156, 156, 156, 0.815);
-   }
+   } */
    #comboBox{
        position: absolute;
-       top:250px;
+       top:300px;
        left:480px;
        
    }
@@ -219,13 +217,11 @@
     <body>
         <div id = "title"> 
             <h1>Projects Home</h1>
-            <br>
-            <br>
             <h2>Take a peek at my projects!</h2>
           </div>
           <div id = "banner">
              <br>
-             <a href=../index.html"><h2 id="home">Home</h2></a>
+             <a href="../index.html"><h2 id="home">Home</h2></a>
              <a href = "gameHome.html"><h2 id="games" >Games</h2></a>
             <!-- <div class = "dropdownProj">
                <button class = "dropbtnProj">Projects</button>
@@ -258,7 +254,7 @@
             <form name="form" id="form">
                 <select name="jumpMenu" id="jumpMenu" onChange="MM_jumpMenu('parent',this,0)">
                     <option value="projectHome.html">Select a page below:</option>
-                    <option value="addressParser.html">Address Parser</option>
+                    <option value="addressParser.html">Address Parsing Program</option>
                     <option value="arrayScrambler.html">Array Scrambler</option>
                     <option value="leapYear.html">Leap Year Checker</option>
                     </select>
@@ -268,7 +264,7 @@
         <div id = "backdrop">
             <a  id = "arrayScrambler" href="arrayScrambler.html"><h3>Array Scrambler</h3></a>
             <a  id = "leapYear" href="leapYear.html"><h3>Leap Year Checker</h3></a>
-            <a  id = "addressParser" href="addressParser.html"><h3>Address Parser</h3></a>
+            <a  id = "addressParser" href="addressParser.html"><h3>Address Parsing Program</h3></a>
         </div>
     </body>
 </html>
