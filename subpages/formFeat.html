@@ -14,25 +14,34 @@
 
         <form>
             <label for = "firstName">First name:</label><br>
-            <input type = "text" id = "firstName" name = "firstName" placeholder = "John"><br>
+            <input type = "text" id = "input0" name = "firstName" placeholder = "John"><br>
             
             <label for = "lastName">Last name:</label><br>
-            <input type = "text" id = "lastName" name = "lastName" placeholder = "Doe"><br>
+            <input type = "text" id = "input1" name = "lastName" placeholder = "Doe"><br>
             
             <label for = "city">City:</label><br>
-            <input type = "text" id = "city" name = "city" placeholder = "Seattle"><br>
+            <input type = "text" id = "input2" name = "city" placeholder = "Seattle"><br>
             
             <label for = "state">State:</label><br>
-            <input type = "text" id = "state" name = "state" placeholder = "Washington"><br>
+            <input type = "text" id = "input3" name = "state" placeholder = "Washington"><br>
             
             <label for = "zipCode">Zip:</label><br>
-            <input type = "text" id = "zipCode" name = "zipCode" placeholder = "98101"><br>
+            <input type = "text" id = "input4" name = "zipCode" placeholder = "98101"><br>
 
+            <button id = "submit" onClick = "separate()">Submit</button>
         </form>
        
     </body>
 
     <script>
-
+        function separate(){
+        var dataArr = [];
+        for(i=0; i<=4; i++){
+            dataArr[i] = document.getElementById("input").value;
+        }
+        for(i=0; i<=4; i++){
+            alert(dataArr[i].value);
+        }
+        }
     </script>
 </html>
