@@ -1,16 +1,9 @@
 <!DOCTYPE html>
 <html>
-    <style>
-        body{
-            position: absolute;
-            font-family: cursive;
-            text-align: center;
-            left: 450px;
-            background: url(../images/newBackDrop.png);
-            background: repeat;
-        }
-    </style>
-
+    <head>
+      <title>Form Features</title>  
+    </head>
+<link rel="stylesheet" href="../css/formSort.css">
     <body>
 
         <form>
@@ -41,9 +34,11 @@
         for(var i=0; i<=4; i++){
             dataArr[i] = document.getElementById("input"+i).value;
         }
-        for(i=0; i<=4; i++){
-            alert(dataArr[i]);
+        // for(i=0; i<=4; i++){
+        //     alert(dataArr[i]);
+        // }
+        return dataArr;
         }
-        }
+        
     </script>
 </html>
