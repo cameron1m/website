@@ -1,0 +1,42 @@
+  //error checking
+  function calculate(){
+    var input = document.getElementById("dateIn").value;
+    if (input.substring(0,2)>12) alert("ERROR dont be a BONEHEAD and put in a valid date!!");
+    else{
+        if(input.length !== 10) {
+        alert("ERROR dont be a so and so, LOOK AT THE INSTRUCTIONS!!!!!!");
+    
+    }
+        else{
+    //parse 
+    var year = input.substring(input.length-4);
+
+   //check if leap year
+   //divisible by 100 
+   if(year % 100 === 0){
+       //div by 400
+       if(year % 400 === 0){
+           alert("Is a Leap Year");
+       }
+       else{
+        alert("Not A Leap Year");
+       }
+   
+   }
+   //not divisable by 4
+   else if (year % 4 !== 0){
+    alert("Not a Leap Year");
+   }
+   //check if last 2 are zeros
+   else if (year.substring(2)==00){
+    alert("Is a Leap Year");
+   }
+   //divisable by 4
+   else if (year % 4 === 0){
+       alert("Is a Leap Year");
+   }
+    
+}
+    
+    }
+    }
