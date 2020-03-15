@@ -1,12 +1,16 @@
 function separate(){
-    var dataArr = [];
-   
-    for(var i=0; i<=4; i++){
-        dataArr[i] = document.getElementById("input"+i).value;
+    var dataArr = [[],[]];
+    var i = 0;
+    while(i>5){
+    for(var j=0; j<=4; j++){
+        dataArr[i][j] = document.getElementById("input"+j).value;
     }
     // for(i=0; i<=4; i++){
     //     alert(dataArr[i]);
     // }
-    return dataArr;
+    i++;
     }
+}
+
+
     
