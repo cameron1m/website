@@ -210,15 +210,9 @@ top:150px;
 
 
 }
-select{
-background-position: center;
-font-family: cursive;
-height:35px;
-}
+
 #selectBox{
 position: absolute;
 top:150px;
 background: gray;
-
-
 }
