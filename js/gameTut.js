@@ -29,6 +29,7 @@ var player = {
 setInterval(update, FRAMETIME);
 
 function update(){
+    ctx.clearRect(0, 0, WIDTH, HEIGHT);
     entityUpdate(player);
     entityUpdate(enemy);    
 }
