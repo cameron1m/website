@@ -79,6 +79,28 @@ height: 100px;
     text-decoration: none;
 
 }
+#gameTut{
+    position: absolute;
+    text-align: center;
+    color:black;
+    text-decoration: none;
+
+    background-color: rgb(107, 107, 107);
+    opacity: 80%;
+    width: 150px;
+    height: 100px;
+    left: 30pc;
+    top: 200px;
+    transition: color 0.3s;
+    transition: opacity 0.2s;
+    box-shadow: 3px 3px 5px rgb(50, 50, 50);
+}
+#gameTut:hover{
+    color: white;
+    opacity: 100%;
+    text-decoration: none;
+
+}
 #home{
     font-family: cursive;
     position: absolute;
