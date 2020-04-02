@@ -2,9 +2,12 @@ var ctx = document.getElementById("ctx").getContext("2d");
 ctx.font = '30px Arial';
  
 var HEIGHT = 500;
-var WIDTH = 500;
-var FRAMETIME = 33;
-
+var WIDTH = 800;
+var FRAMETIME = 10;
+var up1Pressed;
+var up2Pressed;
+var down1Pressed;
+var down2Pressed;
 var ballList = [];
 //Ball
 function Ball(id,x,y,spdX,spdY,name){
@@ -23,7 +26,7 @@ function Ball(id,x,y,spdX,spdY,name){
       if(self.x >= WIDTH || self.x <= 0){
         self.spdX *= -1;
       }
-      else if(self.y >= WIDTH || self.y <= 0){
+      else if(self.y >= HEIGHT|| self.y <= 0){
         self.spdY *= -1;
       }
      
@@ -56,14 +59,14 @@ function Player(id,x,y,spdX,spdY,upPressed,downPressed,name){
     }
     return self;
 }
-Ball('B1',250,250,20,5,'Ball');
-Player('P1',30,250,0,10,up1Pressed,down1Pressed,"Player 1");
-Player('P2',470,250,0,10,up2Pressed,down2Pressed,"Player 2");
+Ball('B1',250,250,3,1,'Ball');
+Player('P1',30,250,0,2,up1Pressed,down1Pressed,"Player 1");
+Player('P2',670,250,0,2,up2Pressed,down2Pressed,"Player 2");
 
 setInterval(update, FRAMETIME);
 
 function update(){
-  ctx.clearRect(0,0,500,500);
+  ctx.clearRect(0,0,WIDTH,HEIGHT);
     for(var id in playerList){
       var Player = playerList[id];
         Player.updatePos();
@@ -71,7 +74,7 @@ function update(){
     }
     for(var id in ballList){
       var Ball = ballList[id];
-   // Ball.updatePos();
+      Ball.updatePos();
     ctx.fillText(Ball.name, Ball.x, Ball.y);
     }
     
@@ -94,10 +97,7 @@ function entityUpdate(entity){
 }
 
 //USER INPUT
-var up1Pressed = false;
-var up2Pressed = false;
-var down1Pressed = false;
-var down2Pressed = false;
+
 
 document.addEventListener('keydown', keyDownHandler, false);
 document.addEventListener('keyup', keyUpHandler, false);
@@ -107,39 +107,52 @@ document.addEventListener('keyup', keyUpHandler, false);
       if(event.keyCode == 83) {
           down1Pressed = true;
         console.log("s is down");
+        return down1Pressed;
       }
       else if(event.keyCode == 87) {
         up1Pressed = true;
         console.log("w is down");
+        return up1Pressed;
       }
   
       if(event.keyCode == 40) {
         down2Pressed = true;
         console.log("down arrow is down");
+        return down2Pressed;
       }
       else if(event.keyCode == 38) {
         up2Pressed = true;
         console.log("up arrow is down");
+        return up2Pressed;
+
       }
   }
   // checks if key is up
     function keyUpHandler(event) {
   
       if(event.keyCode == 83) {
-          down1Pressed = false;
+          down1Pressed = true;
        // console.log("s is up");
+        return down1Pressed;
+
       }
       else if(event.keyCode == 87) {
         up1Pressed = false;
         //console.log("w is up");
+        return up1Pressed;
+
       }
   
       if(event.keyCode == 40) {
         down2Pressed = false;
         //console.log("down arrow is up");
+        return down2Pressed;
+
       }
       else if(event.keyCode == 38) {
         up2Pressed = false;
         //console.log("up arrow is up");
+        return up2Pressed;
+
       }
   }
