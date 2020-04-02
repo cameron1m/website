@@ -4,10 +4,12 @@ ctx.font = '30px Arial';
 var HEIGHT = 500;
 var WIDTH = 800;
 var FRAMETIME = 10;
-var up1Pressed;
-var up2Pressed;
-var down1Pressed;
-var down2Pressed;
+var upPressed = false;
+var downPressed = false;
+var up1Pressed = false;
+var up2Pressed = false;
+var down1Pressed = false;
+var down2Pressed = false;
 var ballList = [];
 //Ball
 function Ball(id,x,y,spdX,spdY,name){
@@ -61,10 +63,9 @@ function Player(id,x,y,spdX,spdY,upPressed,downPressed,name){
 }
 Ball('B1',250,250,3,1,'Ball');
 Player('P1',30,250,0,2,up1Pressed,down1Pressed,"Player 1");
-Player('P2',670,250,0,2,up2Pressed,down2Pressed,"Player 2");
+//Player('P2',670,250,0,2,up2Pressed,down2Pressed,"Player 2");
 
 setInterval(update, FRAMETIME);
-
 function update(){
   ctx.clearRect(0,0,WIDTH,HEIGHT);
     for(var id in playerList){
@@ -72,8 +73,8 @@ function update(){
         Player.updatePos();
         ctx.fillText(Player.name, Player.x, Player.y);
     }
-    for(var id in ballList){
-      var Ball = ballList[id];
+    for(var id1 in ballList){
+      var Ball = ballList[id1];
       Ball.updatePos();
     ctx.fillText(Ball.name, Ball.x, Ball.y);
     }
@@ -105,7 +106,7 @@ document.addEventListener('keyup', keyUpHandler, false);
   function keyDownHandler(event) {
   
       if(event.keyCode == 83) {
-          down1Pressed = true;
+        down1Pressed = true;
         console.log("s is down");
         return down1Pressed;
       }
@@ -131,7 +132,7 @@ document.addEventListener('keyup', keyUpHandler, false);
     function keyUpHandler(event) {
   
       if(event.keyCode == 83) {
-          down1Pressed = true;
+          down1Pressed = false;
        // console.log("s is up");
         return down1Pressed;
 
