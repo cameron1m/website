@@ -37,20 +37,20 @@ function Ball(id,x,y,spdX,spdY,name){
 }
 var playerList = [];
 //player
-function Player(id,x,y,spdX,spdY,upPressed,downPressed,name){
+function Player(id,x,y,spdX,spdY,name){
     var self = {
         id:id,
         x:x,
         y:y,
         spdX:spdX,
         spdY:spdY,
-        upPressed:upPressed,
-        downPressed:downPressed,
+        upPressed:false,
+        downPressed:false,
         name:name,
     };
     playerList[id] = self;
     self.updatePos = function(){
-      
+      //2d array col0 has id's, col1 and col2 contains key up and down data
       if(self.upPressed) self.y -= self.spdY;
       if(self.downPressed) self.y += self.spdY;
 
@@ -62,7 +62,7 @@ function Player(id,x,y,spdX,spdY,upPressed,downPressed,name){
     return self;
 }
 Ball('B1',250,250,3,1,'Ball');
-Player('P1',30,250,0,2,up1Pressed,down1Pressed,"Player 1");
+Player('P1',30,250,0,2,"Player 1");
 //Player('P2',670,250,0,2,up2Pressed,down2Pressed,"Player 2");
 
 setInterval(update, FRAMETIME);
