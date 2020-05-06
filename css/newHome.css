@@ -26,15 +26,15 @@ ul.sdt_menu a{
 ul.sdt_menu li{
 	float:left;
 	width:170px;
-	height:85px;
+	height:50px;
 	position:relative;
 	cursor:pointer;
 }
 
 ul.sdt_menu li > a{
 	position:absolute;
-	top:0px;
-	left:0px;
+	top:16px;
+	left:15px;
 	width:170px;
 	height:85px;
 	z-index:12;
@@ -130,4 +130,148 @@ ul.sdt_menu li div.sdt_box a:first-child{
 }
 ul.sdt_menu li div.sdt_box a:hover{
 	color:#fff;
+}
+ul.sdt_menu1{
+	margin:0;
+	padding:0;
+	list-style: none;
+	font-family:"Myriad Pro", "Trebuchet MS", sans-serif;
+	font-size:14px;
+	width:1020px;
+}
+
+ul.sdt_menu1 a{
+	text-decoration:none;
+	outline:none;
+}
+
+ul.sdt_menu1 li{
+	float:left;
+	width:170px;
+	height:50px;
+	position:relative;
+	cursor:pointer;
+}
+
+ul.sdt_menu1 li > a{
+	position:absolute;
+	top:0px;
+	left:15px;
+	width:170px;
+	height:85px;
+	z-index:12;
+	background:transparent url(../images/overlay.png) no-repeat bottom right;
+	-moz-box-shadow:0px 0px 2px #000;
+	-webkit-box-shadow:0px 0px 2px #000;
+	box-shadow:0px 0px 2px #000;
+}
+
+ul.sdt_menu1 li a img{
+	border:none;
+	position:absolute;
+	width:40px;
+	height:40px;
+	bottom:0px;
+	left:125px;
+	z-index:100;
+	-moz-box-shadow:0px 0px 4px #000;
+	-webkit-box-shadow:0px 0px 4px #000;
+	box-shadow:0px 0px 4px #000;
+}
+
+ul.sdt_menu1 li span.sdt_wrap1{
+	position:absolute;
+	top:25px;
+	left:0px;
+	width:170px;
+	height:60px;
+	z-index:15;
+}
+
+ul.sdt_menu1 li span.sdt_active1{
+	position:absolute;
+	background:#111;
+	top:85px;
+	width:170px;
+	height:0px;
+	left:0px;
+	z-index:14;
+	-moz-box-shadow:0px 0px 4px #000 inset;
+	-webkit-box-shadow:0px 0px 4px #000 inset;
+	box-shadow:0px 0px 4px #000 inset;
+}
+
+
+/*common styles*/
+
+ul.sdt_menu1 li span span.sdt_link1,
+ul.sdt_menu1 li span span.sdt_descr1,
+ul.sdt_menu1 li div.sdt_box1 a{
+	margin-left:15px;
+	text-transform:uppercase;
+	text-shadow:1px 1px 1px #000;
+}
+
+/* title/ description */
+ul.sdt_menu1 li span span.sdt_link1{
+	color:#fff;
+	font-size:24px;
+	float:left;
+	clear:both;
+}
+ul.sdt_menu1 li span span.sdt_descr1{
+	color:#0B75AF;
+	float:left;
+	clear:both;
+	width:155px;
+	font-size:10px;
+	letter-spacing:1px;
+}
+
+/* sub menu */
+ul.sdt_menu1 li div.sdt_box1{
+	display:block;
+	position:absolute;
+	width:170px;
+	overflow:hidden;
+	height:170px;
+	top:85px;
+	left:0px;
+	display:none;
+	background:#000;
+}
+ul.sdt_menu1 li div.sdt_box1 a{
+	float:left;
+	clear:both;
+	line-height:30px;
+	color:#0B75AF;
+}
+
+ul.sdt_menu1 li div.sdt_box1 a:first-child{
+	margin-top:15px;
+}
+ul.sdt_menu1 li div.sdt_box1 a:hover{
+	color:#fff;
+}
+#oldIndex{
+    position: absolute;
+    text-align: center;
+    color:black;
+    text-decoration: none;
+    
+    background-color: rgb(107, 107, 107);
+    opacity: 80%;
+    width: 150px;
+    height: 100px;
+    left: 45%;
+    top: 300px;
+    transition: color 0.3s;
+    transition: opacity 0.2s;
+    box-shadow: 3px 3px 5px rgb(50, 50, 50);
+
+}
+#oldIndex:hover{
+    color: white;
+    opacity: 100%;
+    text-decoration: none;
 }
